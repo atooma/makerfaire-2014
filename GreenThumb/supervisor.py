@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import dht11
 import time
 import os
@@ -17,7 +19,7 @@ def ouput_val(pin):
 
     print '--------PIN {}----------'.format(pin)
     print 'Humidity: {}%'.format(humidity)
-    print 'Temperature: {}C'.format(temperature)
+    print 'Temperature: {}°C'.format(temperature)
     print '------------------------'
 
 while True:

@@ -6,7 +6,7 @@ class DHT11Exception(Exception):
 
 def read(pin):
     def bin2dec(string_num):
-        return str(int(string_num, 2))
+        return int(string_num, 2)
 
     data = []
 
@@ -82,7 +82,7 @@ def read(pin):
     humidity = bin2dec(humidity_bit)
     temperature = bin2dec(temperature_bit)
 
-    if int(humidity) + int(temperature) - int(bin2dec(crc)) == 0:
+    if humidity + temperature - bin2dec(crc) == 0:
         return (humidity, temperature)
     else:
         raise DHT11Exception('Error CRC')
