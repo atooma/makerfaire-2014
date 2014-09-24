@@ -1,4 +1,7 @@
-from django.contrib.auth.models import User, Group
+from models import DHTSensor
 from rest_framework import serializers
 
-# write serializers here
+class DHTSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DHTSensor
+        fields = ('temperature', 'humidity')

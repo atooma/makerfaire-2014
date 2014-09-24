@@ -1,5 +1,13 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 
-# write views here
+from api.serializers import DHTSerializer
+from models import DHTSensor
+
+
+class DHTSensorsViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows DHT sensors values to be viewed or edited.
+    """
+    queryset = DHTSensor.objects.all()
+    serializer_class = DHTSerializer
