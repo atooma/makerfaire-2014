@@ -4,4 +4,4 @@ from rest_framework import serializers
 class DHTSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DHTSensor
-        fields = ('temperature', 'humidity')
+        fields = ('id', 'temperature', 'humidity')

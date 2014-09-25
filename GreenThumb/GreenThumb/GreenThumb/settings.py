@@ -42,9 +42,9 @@ INSTALLED_APPS = (
 
 REST_FRAMEWORK = {
     'PAGINATE_BY': 10,
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
 }
 
 MIDDLEWARE_CLASSES = (
