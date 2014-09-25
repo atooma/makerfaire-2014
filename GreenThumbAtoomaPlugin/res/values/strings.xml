@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">GreethumbPlugin</string>
+    <string name="module_name">Greethumb</string>
+    <string name="address">Address</string>
+    <string name="pin">Sensor Pin</string>
+    <string name="filter_humidity">Humidity level below which trigger</string>
+    <string name="filter_temp">Temperature level above which trigger</string>
+    <string name="tr_tempext">External Temperature</string>
+    <string name="tr_tempint">Internal Temperature</string>
+    <string name="tr_humext">External Humidity</string>
+    <string name="tr_huminte">Internal Humidity</string>
+
+</resources>

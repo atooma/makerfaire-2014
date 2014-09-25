@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">ChickenfootPlugin</string>
+    <string name="module_name">Chickenfoot</string>
+    <string name="address">Address</string>
+    <string name="pe_lights">Lights</string>
+    <string name="pe_back">Move back</string>
+    <string name="pe_forward">Move forward</string>
+    <string name="pe_left">Move left</string>
+    <string name="pe_right">Move right</string>
+    <string name="duration">Duration</string>
+
+</resources>
