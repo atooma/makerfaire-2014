@@ -43,12 +43,7 @@ def move():
         return jsonify({ 'error' : 'use type up, down, left or right' }), 400
     time.sleep(duration/1000)
 
-    Arduino.digitalWrite(motor2_cp1, 0)
-    Arduino.digitalWrite(motor2_cp2, 0)
     Arduino.analogWrite(motor2_ep, 0)
-
-    Arduino.digitalWrite(motor1_cp1, 0)
-    Arduino.digitalWrite(motor1_cp2, 0)
     Arduino.analogWrite(motor1_ep, 0)
 
     return jsonify({ 'status' : 'success' }), 200
