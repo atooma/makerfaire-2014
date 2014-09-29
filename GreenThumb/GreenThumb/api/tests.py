@@ -34,3 +34,12 @@ class SensorTest(TestCase):
         response = self.client.post('/api/sensors/dht/',
             {'id' : 12, 'temperature' : 24, 'humidity' : 32})
         self.assertEqual(response.status_code, 201)
+
+    def test_update_single_sensor_values(self):
+        DHTSensor.objects.create(id=12, temperature=24, humidity=32)
+        credentials = base64.b64encode('testuser:testuserpsw')
+        self.client.defaults['HTTP_AUTHORIZATION'] = 'Basic ' + credentials
+        response = self.client.put('/api/sensors/dht/{}/'.format(12),
+            data=json.dumps({'id' : 12, 'temperature' : 25, 'humidity' : 35}),
+            content_type='application/json')
+        self.assertEqual(response.status_code, 200)
