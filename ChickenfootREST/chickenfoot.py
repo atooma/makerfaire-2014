@@ -15,7 +15,7 @@ motor2_cp1 = 2
 motor2_cp2 = 3
 motor2_ep = 9
 motor_speed = 1000
-lights_pin = 7
+lights_pin = 13
 beep_pin = 8
 
 @app.route('/move', methods=['POST'])
@@ -60,9 +60,17 @@ def lights():
 def beep():
     duration = request.json['duration']
     tone = Tone(beep_pin)
-    #tone.play(Tone.NOTE_E2, duration/1000)
+    tone.play(Tone.NOTE_FS1, duration)
     return jsonify({ 'status' : 'success' }), 200
 
 if __name__ == "__main__":
-    serial_manager.open('/dev/tt.usbmodem1411')
+    serial_manager.timeout = None
+    serial_manager.open('/dev/tty.usbmodem14121')
+    Arduino.pinMode(motor1_cp1, Arduino.OUTPUT)
+    Arduino.pinMode(motor1_cp2, Arduino.OUTPUT)
+    Arduino.pinMode(motor1_ep, Arduino.OUTPUT)
+    Arduino.pinMode(motor2_cp1, Arduino.OUTPUT)
+    Arduino.pinMode(motor2_cp2, Arduino.OUTPUT)
+    Arduino.pinMode(motor2_ep, Arduino.OUTPUT)
+    Arduino.pinMode(lights_pin, Arduino.OUTPUT)
     app.run()

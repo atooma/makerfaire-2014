@@ -3,6 +3,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    TESTING = False
 
 class TestingConfig(Config):
     SERVER_NAME = 'localhost'
@@ -10,6 +11,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
+    TESTING = False
 
 config = {
     'development' : DevelopmentConfig,
