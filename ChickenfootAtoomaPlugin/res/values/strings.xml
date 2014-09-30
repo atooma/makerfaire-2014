@@ -3,7 +3,9 @@
     <string name="app_name">ChickenfootPlugin</string>
     <string name="module_name">Chickenfoot</string>
     <string name="address">Address</string>
-    <string name="pe_lights">Lights</string>
+    <string name="pe_lights_on">Lights on</string>
+    <string name="pe_lights_off">Lights off</string>
+    <string name="pe_beep">Beep</string>
     <string name="pe_back">Move back</string>
     <string name="pe_forward">Move forward</string>
     <string name="pe_left">Move left</string>

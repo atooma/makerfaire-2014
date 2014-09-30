@@ -15,7 +15,10 @@ public class CHICKENFOOT extends Module {
 
 	@Override
 	public void registerComponents() {
-		registerPerformer(new PE_LIGHTS(getContext(), "LIGHTS", 1));
+		registerPerformer(new PE_BEEP(getContext(), "BEEP", 1));
+
+		registerPerformer(new PE_LIGHTS_ON(getContext(), "LIGHTS", 1));
+		registerPerformer(new PE_LIGHTS_OFF(getContext(), "LIGHTS", 1));
 
 		registerPerformer(new PE_FORWARD(getContext(), "FORWARD", 1));
 		registerPerformer(new PE_BACK(getContext(), "BACK", 1));

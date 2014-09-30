@@ -28,10 +28,10 @@ public class PE_BACK extends Performer {
 		String baseUrl = (String) parameters.get("ADDRESS");
 		Double duration = (Double) parameters.get("DURATION");
 
-		String url = baseUrl + "/api/action/turn/";
+		String url = baseUrl + "/down";
 
 		try {
-			JSONObject json = new JSONObject("{direction: \"back\", duration : " + duration + "}");
+			JSONObject json = new JSONObject("{\"type\": \"back\", \"duration\" : " + duration + "}");
 			AsyncHttpClient client = new AsyncHttpClient();
 			RequestParams params = new RequestParams();
 			params.put("json", json.toString());

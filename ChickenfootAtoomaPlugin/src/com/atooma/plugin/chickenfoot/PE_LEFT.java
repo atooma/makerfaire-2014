@@ -28,10 +28,10 @@ public class PE_LEFT extends Performer {
 		String baseUrl = (String) parameters.get("ADDRESS");
 		Double duration = (Double) parameters.get("DURATION");
 
-		String url = baseUrl + "/api/action/turn/";
+		String url = baseUrl + "/left";
 
 		try {
-			JSONObject json = new JSONObject("{direction: \"left\", duration : " + duration + "}");
+			JSONObject json = new JSONObject("{\"type\": \"left\", \"duration\" : " + duration + "}");
 			AsyncHttpClient client = new AsyncHttpClient();
 			RequestParams params = new RequestParams();
 			params.put("json", json.toString());

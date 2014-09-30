@@ -11,9 +11,9 @@ import com.atooma.plugin.Performer;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 
-public class PE_FORWARD extends Performer {
+public class PE_BEEP extends Performer {
 
-	public PE_FORWARD(Context context, String id, int version) {
+	public PE_BEEP(Context context, String id, int version) {
 		super(context, id, version);
 	}
 
@@ -28,10 +28,10 @@ public class PE_FORWARD extends Performer {
 		String baseUrl = (String) parameters.get("ADDRESS");
 		Double duration = (Double) parameters.get("DURATION");
 
-		String url = baseUrl + "/move";
+		String url = baseUrl + "/beep";
 
 		try {
-			JSONObject json = new JSONObject("{\"type\": \"up\", \"duration\" : " + duration + "}");
+			JSONObject json = new JSONObject("{\"duration\" : " + duration + "}");
 			AsyncHttpClient client = new AsyncHttpClient();
 			RequestParams params = new RequestParams();
 			params.put("json", json.toString());
@@ -45,7 +45,7 @@ public class PE_FORWARD extends Performer {
 
 	@Override
 	public void defineUI() {
-		setTitle(R.string.pe_forward);
+		setTitle(R.string.pe_beep);
 		setIcon(R.drawable.plugin_icon_el_normal);
 	}
 
