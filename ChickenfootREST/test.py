@@ -58,7 +58,7 @@ class TestCar(unittest.TestCase):
                     content_type='application/json')
 
             self.assertEqual(response.status_code, 200)
-            mock_digitalWrite.assert_called_once_with(chickenfoot.lights_pin, 1)
+            mock_digitalWrite.assert_called_once_with(chickenfoot.boardconfig.lights_pin, 1)
 
     @patch('chickenfoot.Arduino.digitalWrite')
     def test_lights_off_ok(self, mock_digitalWrite):
@@ -71,7 +71,7 @@ class TestCar(unittest.TestCase):
                     content_type='application/json')
 
             self.assertEqual(response.status_code, 200)
-            mock_digitalWrite.assert_called_once_with(chickenfoot.lights_pin, 0)
+            mock_digitalWrite.assert_called_once_with(chickenfoot.boardconfig.lights_pin, 0)
 
     @patch('chickenfoot.Arduino.digitalWrite')
     def test_lights_wrong_par(self, mock_digitalWrite):

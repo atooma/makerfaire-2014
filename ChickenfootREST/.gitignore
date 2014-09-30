@@ -3,3 +3,4 @@ sandbox
 *.pyc
 *.sqlite3
 apiscratch
+boardconfig.py
