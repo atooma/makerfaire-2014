@@ -22,9 +22,9 @@ public class TR_TempInternal extends AlarmBasedTrigger {
 
 	@Override
 	public void declareParameters() {
-		addParameter(R.string.address, R.string.address, "ADDRESS", "STRING", true, "");
-		addParameter(R.string.pin, R.string.pin, "PIN", "NUMBER", true, "");
-		addParameter(R.string.filter_temp, R.string.filter_temp, "FILTER", "NUMBER-FILTER", true, "");
+		addParameter(R.string.address, R.string.address, "ADDRESS", "STRING", true, null);
+		addParameter(R.string.pin, R.string.pin, "PIN", "NUMBER", true, null);
+		addParameter(R.string.filter_temp, R.string.filter_temp, "FILTER", "NUMBER", true, null);
 	}
 
 	@Override
