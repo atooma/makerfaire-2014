@@ -4,7 +4,7 @@ MarkupSafe==0.23
 Werkzeug==0.9.6
 itsdangerous==0.24
 mock==1.0.1
-nanpy==0.9.1
+git+git://github.com/nanpy/nanpy@1bbb0946064bde2290f832b593015b7f7d7b6457
 nose==1.3.4
 pyserial==2.7
 wsgiref==0.1.2

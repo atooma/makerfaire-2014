@@ -61,7 +61,6 @@ def beep():
     return jsonify({ 'status' : 'success' }), 200
 
 if __name__ == "__main__":
-    serial_manager.timeout = None
     serial_manager.open(boardconfig.serialport)
     Arduino.pinMode(boardconfig.motor1_cp1, Arduino.OUTPUT)
     Arduino.pinMode(boardconfig.motor1_cp2, Arduino.OUTPUT)
