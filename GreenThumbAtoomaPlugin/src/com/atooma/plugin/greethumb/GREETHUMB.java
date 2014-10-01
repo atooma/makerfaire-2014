@@ -16,7 +16,6 @@ public class GREETHUMB extends Module {
 	@Override
 	public void registerComponents() {
 		registerTrigger(new TR_TempExternal(getContext(), "TEMP-EXTERNAL", 1));
-		registerTrigger(new TR_TempInternal(getContext(), "TEMP-INTERNAL", 1));
 		registerTrigger(new TR_HumExternal(getContext(), "HUM-EXTERNAL", 1));
 		registerTrigger(new TR_HumInternal(getContext(), "HUM-INTERNAL", 1));
 	}
