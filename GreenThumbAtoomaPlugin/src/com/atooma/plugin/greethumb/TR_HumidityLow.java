@@ -12,11 +12,11 @@ import com.atooma.plugin.Schedule;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-public class TR_HumExternal extends AlarmBasedTrigger {
+public class TR_HumidityLow extends AlarmBasedTrigger {
 
 	private static final long INTERVAL = 30 * 1000;
 
-	public TR_HumExternal(Context context, String id, int version) {
+	public TR_HumidityLow(Context context, String id, int version) {
 		super(context, id, version);
 	}
 
@@ -24,7 +24,7 @@ public class TR_HumExternal extends AlarmBasedTrigger {
 	public void declareParameters() {
 		addParameter(R.string.address, R.string.address, "ADDRESS", "STRING", true, null);
 		addParameter(R.string.pin, R.string.pin, "PIN", "NUMBER", true, null);
-		addParameter(R.string.filter_humidity, R.string.filter_humidity, "FILTER", "NUMBER", true, null);
+		addParameter(R.string.filter_humidity_low, R.string.filter_humidity_low, "FILTER", "NUMBER", true, null);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class TR_HumExternal extends AlarmBasedTrigger {
 	@Override
 	public void onTimeout(final String ruleId, ParameterBundle parameters) {
 		String baseUrl = (String) parameters.get("ADDRESS");
-		Integer pin = (Integer) parameters.get("PIN");
+		int pin = Utils.doubleToInt((Double) parameters.get("PIN"));
 		final Double filter = (Double) parameters.get("FILTER");
 
 		String url = baseUrl + "/api/sensors/dht/" + pin + "/";;

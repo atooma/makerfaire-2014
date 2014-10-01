@@ -12,11 +12,11 @@ import com.atooma.plugin.Schedule;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-public class TR_HumInternal extends AlarmBasedTrigger {
+public class TR_HumidityHigh extends AlarmBasedTrigger {
 
 	private static final long INTERVAL = 30 * 1000;
 
-	public TR_HumInternal(Context context, String id, int version) {
+	public TR_HumidityHigh(Context context, String id, int version) {
 		super(context, id, version);
 	}
 
@@ -24,7 +24,7 @@ public class TR_HumInternal extends AlarmBasedTrigger {
 	public void declareParameters() {
 		addParameter(R.string.address, R.string.address, "ADDRESS", "STRING", true, null);
 		addParameter(R.string.pin, R.string.pin, "PIN", "NUMBER", true, null);
-		addParameter(R.string.filter_humidity, R.string.filter_humidity, "FILTER", "NUMBER", true, null);
+		addParameter(R.string.filter_humidity_high, R.string.filter_humidity_high, "FILTER", "NUMBER", true, null);
 	}
 
 	@Override
@@ -39,8 +39,8 @@ public class TR_HumInternal extends AlarmBasedTrigger {
 
 	@Override
 	public void defineUI() {
-		setIcon(R.drawable.icon_hum_inside);
-		setTitle(R.string.tr_huminte);
+		setIcon(R.drawable.icon_hum_outside);
+		setTitle(R.string.tr_humext);
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class TR_HumInternal extends AlarmBasedTrigger {
 				try {
 					JSONObject json = new JSONObject(response);
 					int level = json.getInt("humidity");
-					if (level < filter)
+					if (level > filter)
 						trigger(ruleId, new ParameterBundle());
 				} catch (JSONException e) {
 					e.printStackTrace();
@@ -72,5 +72,4 @@ public class TR_HumInternal extends AlarmBasedTrigger {
 
 		});
 	}
-
 }

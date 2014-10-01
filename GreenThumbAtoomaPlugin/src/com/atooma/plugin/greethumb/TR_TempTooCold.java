@@ -12,11 +12,11 @@ import com.atooma.plugin.Schedule;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-public class TR_TempExternal extends AlarmBasedTrigger {
+public class TR_TempTooCold extends AlarmBasedTrigger {
 
 	private static final long INTERVAL = 30 * 1000;
 
-	public TR_TempExternal(Context context, String id, int version) {
+	public TR_TempTooCold(Context context, String id, int version) {
 		super(context, id, version);
 	}
 
@@ -24,7 +24,7 @@ public class TR_TempExternal extends AlarmBasedTrigger {
 	public void declareParameters() {
 		addParameter(R.string.address, R.string.address, "ADDRESS", "STRING", true, null);
 		addParameter(R.string.pin, R.string.pin, "PIN", "NUMBER", true, null);
-		addParameter(R.string.filter_temp, R.string.filter_temp, "FILTER", "NUMBER", true, null);
+		addParameter(R.string.filter_temp_low, R.string.filter_temp_low, "FILTER", "NUMBER", true, null);
 	}
 
 	@Override

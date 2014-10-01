@@ -15,9 +15,10 @@ public class GREETHUMB extends Module {
 
 	@Override
 	public void registerComponents() {
-		registerTrigger(new TR_TempExternal(getContext(), "TEMP-EXTERNAL", 1));
-		registerTrigger(new TR_HumExternal(getContext(), "HUM-EXTERNAL", 1));
-		registerTrigger(new TR_HumInternal(getContext(), "HUM-INTERNAL", 1));
+		registerTrigger(new TR_TempTooCold(getContext(), "TEMP-COLD", 1));
+		registerTrigger(new TR_TempTooHot(getContext(), "TEMP-HOT", 1));
+		registerTrigger(new TR_HumidityHigh(getContext(), "HUM-HIGH", 1));
+		registerTrigger(new TR_HumidityLow(getContext(), "HUM-LOW", 1));
 	}
 
 	@Override
