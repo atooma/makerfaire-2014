@@ -4,3 +4,4 @@ sandbox
 *.sqlite3
 apiscratch
 boardconfig.py
+nanpy
