@@ -40,7 +40,7 @@ public class TR_HumidityLow extends AlarmBasedTrigger {
 	@Override
 	public void defineUI() {
 		setIcon(R.drawable.icon_hum_outside);
-		setTitle(R.string.tr_humext);
+		setTitle(R.string.tr_humlow);
 	}
 
 	@Override

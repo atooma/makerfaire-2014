@@ -40,7 +40,7 @@ public class TR_TempTooHot extends AlarmBasedTrigger {
 	@Override
 	public void defineUI() {
 		setIcon(R.drawable.icon_temp_outside);
-		setTitle(R.string.tr_humext);
+		setTitle(R.string.tr_temphot);
 	}
 
 	@Override

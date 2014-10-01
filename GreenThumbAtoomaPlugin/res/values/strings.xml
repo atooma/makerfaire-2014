@@ -8,8 +8,9 @@
     <string name="filter_temp_low">Temperature level below which trigger</string>
     <string name="filter_humidity_high">Humidity level above which trigger</string>
     <string name="filter_temp_high">Temperature level above which trigger</string>
-    <string name="tr_tempext">External Temperature</string>
-    <string name="tr_humext">External Humidity</string>
-    <string name="tr_huminte">Soil Humidity</string>
+    <string name="tr_temphot">Temperature is too hot</string>
+    <string name="tr_tempcold">Temperature is too cold</string>
+    <string name="tr_humhigh">Humidity is too high</string>
+    <string name="tr_humlow">Humidity is too low</string>
 
 </resources>
