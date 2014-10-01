@@ -39,7 +39,7 @@ public class TR_HumInternal extends AlarmBasedTrigger {
 
 	@Override
 	public void defineUI() {
-		setIcon(R.drawable.plugin_icon_el_normal);
+		setIcon(R.drawable.icon_hum_inside);
 		setTitle(R.string.tr_huminte);
 	}
 

@@ -23,7 +23,7 @@ public class GREETHUMB extends Module {
 
 	@Override
 	public void defineUI() {
-		setIcon(R.drawable.plugin_icon_normal);
+		setIcon(R.drawable.icon_mod);
 		setTitle(R.string.module_name);
 	}
 

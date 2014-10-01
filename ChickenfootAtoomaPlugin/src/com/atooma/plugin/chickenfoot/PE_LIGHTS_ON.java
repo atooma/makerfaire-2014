@@ -13,7 +13,6 @@ import com.atooma.plugin.ParameterBundle;
 import com.atooma.plugin.Performer;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 public class PE_LIGHTS_ON extends Performer {
 
@@ -61,7 +60,7 @@ public class PE_LIGHTS_ON extends Performer {
 	@Override
 	public void defineUI() {
 		setTitle(R.string.pe_lights_on);
-		setIcon(R.drawable.plugin_icon_el_normal);
+		setIcon(R.drawable.icon_lights);
 	}
 
 }

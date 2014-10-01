@@ -39,7 +39,7 @@ public class TR_TempInternal extends AlarmBasedTrigger {
 
 	@Override
 	public void defineUI() {
-		setIcon(R.drawable.plugin_icon_el_normal);
+		setIcon(R.drawable.icon_temp_inside);
 		setTitle(R.string.tr_tempint);
 	}
 
