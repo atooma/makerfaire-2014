@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.os.RemoteException;
+import android.util.Log;
 
 import com.atooma.plugin.AlarmBasedTrigger;
 import com.atooma.plugin.ParameterBundle;
@@ -14,7 +15,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class TR_TempInternal extends AlarmBasedTrigger {
 
-	private static final long INTERVAL = 5 * 60 * 1000;
+	private static final long INTERVAL = 30 * 1000;
 
 	public TR_TempInternal(Context context, String id, int version) {
 		super(context, id, version);
@@ -51,10 +52,12 @@ public class TR_TempInternal extends AlarmBasedTrigger {
 	@Override
 	public void onTimeout(final String ruleId, ParameterBundle parameters) {
 		String baseUrl = (String) parameters.get("ADDRESS");
-		Integer pin = (Integer) parameters.get("PIN");
+		int pin = Utils.doubleToInt((Double) parameters.get("PIN"));
 		final Double filter = (Double) parameters.get("FILTER");
 
-		String url = baseUrl + "/api/sensors/dht/" + pin;
+		String url = baseUrl + "/api/sensors/dht/" + pin + "/";
+		
+		Log.e("CALLEDURL", "URL" + url);
 
 		AsyncHttpClient client = new AsyncHttpClient();
 		client.get(url, new AsyncHttpResponseHandler() {

@@ -14,7 +14,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class TR_HumExternal extends AlarmBasedTrigger {
 
-	private static final long INTERVAL = 5 * 60 * 1000;
+	private static final long INTERVAL = 30 * 1000;
 
 	public TR_HumExternal(Context context, String id, int version) {
 		super(context, id, version);
@@ -53,7 +53,7 @@ public class TR_HumExternal extends AlarmBasedTrigger {
 		Integer pin = (Integer) parameters.get("PIN");
 		final Double filter = (Double) parameters.get("FILTER");
 
-		String url = baseUrl + "/api/sensors/dht/" + pin;
+		String url = baseUrl + "/api/sensors/dht/" + pin + "/";;
 
 		AsyncHttpClient client = new AsyncHttpClient();
 		client.get(url, new AsyncHttpResponseHandler() {
